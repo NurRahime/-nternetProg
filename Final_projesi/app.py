@@ -237,11 +237,5 @@ def logout():
     logout_user()
     flash("Başarıyla çıkış yapıldı.", "success")
     return redirect(url_for('login'))
-
-
-if __name__ == '__main__':
-    # Eğer eski veritabanı sorun çıkarıyorsa dosyayı silebilirsiniz (geliştirme için)
-    if not os.path.exists('database.db'):
-        with app.app_context():
-            db.create_all()
-    app.run(debug=True)
+if name == "main":
+    app.run(host="0.0.0.0",port=int(os.environ.get("PORT",5000)))
