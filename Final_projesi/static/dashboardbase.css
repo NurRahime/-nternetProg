@@ -1,0 +1,56 @@
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+        }
+
+        .auth-buttons {
+            margin-left: auto;
+        }
+
+        footer {
+            background-color: #0080ff;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .social-icons a:hover {
+            color: #7c7d7e;
+        }
