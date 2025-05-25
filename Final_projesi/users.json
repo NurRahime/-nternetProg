@@ -1,0 +1,8 @@
+[
+    {
+        "id": 1,
+        "name": "ali",
+        "email": "ali@gmail.com",
+        "password_hash": "pbkdf2:sha256:1000000$bahmPxw61CVWbWQt$36008a6632a3dfcf907a9a9599fe963edb8cb4110f6f5f7a730f1f20a9f15cab"
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "ali",
+        "email": "ali@gmail.com",
+        "ziyaretciler": [
+            {
+                "id": 1,
+                "ad_soyad": "asda",
+                "tarih": "2025-05-23 17:19:30",
+                "aciklama": "dadaawd",
+                "user_id": 1
+            }
+        ]
+    }
+]
