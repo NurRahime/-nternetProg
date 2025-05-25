@@ -237,5 +237,5 @@ def logout():
     logout_user()
     flash("Başarıyla çıkış yapıldı.", "success")
     return redirect(url_for('login'))
-if name == "main":
+if __name__ == "__main__":
     app.run(host="0.0.0.0",port=int(os.environ.get("PORT",5000)))
