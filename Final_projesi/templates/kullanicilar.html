@@ -1,0 +1,42 @@
+{% extends "dashboardbase.html" %}
+{% block title %}Kullanıcı{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2>Kullanıcılar Listesi</h2>
+    <!-- Kullanıcılar tablosu -->
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Ad Soyad</th>
+                <th>E-posta</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if users %}
+                {% for user in users %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td class="d-flex gap-2">
+                        <a href="{{ url_for('kullanici_guncelle', user_id=user.id) }}" class="btn btn-sm btn-warning">Düzenle</a>
+                        <form action="{{ url_for('kullanici_sil', user_id=user.id) }}" method="POST" onsubmit="return confirm('Bu kullanıcı silinsin mi?');">
+                            <button type="submit" class="btn btn-sm btn-danger">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4" class="text-center">Henüz kullanıcı eklenmedi.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary mt-3">Geri Dön</a>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+<div class="main-container">
+    <h1 class="main-title">Ziyaretçi Kayıt Sistemi</h1>
+    <p class="main-subtitle">Ziyaretçi kaydınızı buradan kolayca yapabilirsiniz.</p>
+
+    <a href="{{ url_for('register') }}" class="btn btn-primary btn-primary-custom">Kayıt Ol</a>
+
+    <div class="feature-cards">
+        <div class="card-custom">
+            <i class="bi bi-list-check card-icon"></i>
+            <h3 class="card-title">Ziyaretçi Takip</h3>
+            <p>Kolay ve hızlı ziyaretçi takibi.</p>
+            <a href="{{ url_for('register') }}" class="btn btn-outline-primary btn-outline-primary-custom card-button">Ziyaretçi Takip</a>
+        </div>
+        <div class="card-custom">
+            <i class="bi bi-shield-lock card-icon"></i>
+            <h3 class="card-title">Güvenli</h3>
+            <p>Verileriniz gizlilik içinde korunur.</p>
+            <a href="{{ url_for('kullanicilar') }}" class="btn btn-outline-primary btn-outline-primary-custom card-button">Kullanıcılar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

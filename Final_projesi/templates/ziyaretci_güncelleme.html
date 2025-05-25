@@ -1,0 +1,40 @@
+{% extends "dashboardbase.html" %}
+{% block title %}Ziyaretçi Güncelleme{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow rounded-4">
+                <div class="card-header bg-success text-white rounded-top-4">
+                    <h4 class="mb-0">Ziyaretçi Bilgilerini Güncelle</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form method="POST" class="row g-4">
+                        <div class="col-md-6">
+                            <label for="ad_soyad" class="form-label">Ad Soyad</label>
+                            <input type="text" name="ad_soyad" id="ad_soyad" class="form-control"
+                                   value="{{ ziyaretci.ad_soyad }}" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="tarih" class="form-label">Tarih</label>
+                            <input type="date" name="tarih" id="tarih" class="form-control"
+                                   value="{{ ziyaretci.tarih }}" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="aciklama" class="form-label">Açıklama</label>
+                            <textarea name="aciklama" id="aciklama" class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary px-4">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "dashboardbase.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5 fw-bold text-primary">Ziyaretçi Kayıt Paneli</h1>
+
+    <div class="row mb-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow-sm text-center bg-light">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase text-secondary mb-3">Toplam Ziyaretçi</h5>
+                    <h2 class="display-1 fw-bold text-success">{{ toplam_ziyaretci }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-semibold text-dark">Son Ziyaretçiler</h3>
+        <a href="{{ url_for('ziyaretci_ekleme') }}" class="btn btn-outline-primary shadow-sm">
+            <i class="bi bi-plus-circle me-1"></i> Ziyaretçi Ekle
+        </a>
+    </div>
+
+    <div class="row g-4">
+        {% for ziyaretci in son_ziyaretciler %}
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-primary fw-semibold">{{ ziyaretci.ad_soyad }}</h5>
+                    <p class="card-text text-muted mb-2">
+                        <small><i class="bi bi-calendar-event me-1"></i> {{ ziyaretci.tarih.strftime('%d/%m/%Y') }}</small>
+                    </p>
+                    <p class="card-text fst-italic text-secondary">{{ ziyaretci.aciklama or 'Açıklama yok' }}</p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-12">
+            <div class="alert alert-info text-center fw-semibold" role="alert">
+                Henüz kayıtlı ziyaretçi bulunmamaktadır.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
